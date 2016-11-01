@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="7"
+    timestamp="23169785811728"
+    token="8989277994569243366" >
+
+    <task
+        name="javac"
+        duration="501" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <artifact
+        location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/resources-debug.ap_"
+        type="RESOURCES" />
+
+    <build timestamp="22509144761070" >
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build timestamp="22870065682120" >
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="23169785811728" >
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+    </build>
+
+</instant-run>

@@ -1,0 +1,11 @@
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/R$id$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/R$layout$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/R$integer$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/R$style$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/google/android/gms/R$id$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$id$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/MainActivity$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/R$mipmap$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/R$string$override.class
+CHANGED,/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vinil/dishmenu/R$styleable$override.class

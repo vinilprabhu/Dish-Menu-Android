@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1073219939319",
+    "firebase_url": "https://dish-menu-ad07e.firebaseio.com",
+    "project_id": "dish-menu-ad07e",
+    "storage_bucket": "dish-menu-ad07e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1073219939319:android:a8928b932d5a5471",
+        "android_client_info": {
+          "package_name": "com.vinil.dishmenu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1073219939319-2djvl79hbustubr0e9vb2ap5d6l71uq2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vinil.dishmenu",
+            "certificate_hash": "CAA9B7BD352DBE634EF5209D67DBC1A3F1F5CD22"
+          }
+        },
+        {
+          "client_id": "1073219939319-7maa4jmse10tcho77b76oca9gio89gml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsijN_EUuPLw5eD4xDXtFuVAjfKRbZsiE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1073219939319-7maa4jmse10tcho77b76oca9gio89gml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
