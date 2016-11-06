@@ -17,8 +17,10 @@
         android:hint="First Name"
         android:ems="10"
         android:id="@+id/editTextFirstName"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,8 +29,10 @@
         android:hint="Surname"
         android:ems="10"
         android:id="@+id/editTextSurname"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextFirstName"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignEnd="@+id/editTextFirstName" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,8 +41,10 @@
         android:ems="10"
         android:hint="Country"
         android:id="@+id/editTextCountry"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextSurname"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignEnd="@+id/editTextSurname" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -47,8 +53,10 @@
         android:ems="10"
         android:hint="Date of Birth"
         android:id="@+id/editTextDOB"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextCountry"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignEnd="@+id/editTextCountry" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -57,8 +65,10 @@
         android:ems="10"
         android:hint="Phone no"
         android:id="@+id/editTextPhone"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/editTextDOB"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignEnd="@+id/editTextDOB" />
 
     <Button
         android:layout_width="wrap_content"
@@ -66,6 +76,16 @@
         android:text="Submit"
         android:id="@+id/buttonsubmitDetails"
         android:layout_below="@+id/editTextPhone"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Update Profile"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView" />
 
 </RelativeLayout>

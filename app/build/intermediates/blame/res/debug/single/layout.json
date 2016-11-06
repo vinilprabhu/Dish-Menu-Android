@@ -44,12 +44,12 @@
         "source": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
-        "source": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_multichoice_material.xml"
-    },
-    {
         "merged": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
         "source": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/select_dialog_multichoice_material.xml"
     },
     {
         "merged": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",

@@ -16,6 +16,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.ProviderQueryResult;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Login extends AppCompatActivity {
 
@@ -52,7 +56,19 @@ public class Login extends AppCompatActivity {
         buttonSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userLogin();
+
+                String errorMsg = "Invalid Email",errorMsg2="Invalid Password";
+                final String email = editTextEmail.getText().toString();
+                final String pass = editTextPassword.getText().toString();
+
+                //validation
+                if (!isValidEmail(email))editTextEmail.setError(errorMsg);
+
+                else if(!checkEmailAvailability(email))editTextEmail.setError("Email not registered!\nSignUp now");
+
+                else if (!isValidPassword(pass))editTextPassword.setError(errorMsg2);
+
+                else userLogin();
             }
         });
 
@@ -70,21 +86,7 @@ public class Login extends AppCompatActivity {
         String password  = editTextPassword.getText().toString().trim();
 
 
-
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Please enter password", Toast.LENGTH_LONG).show();
-            return;
-        }
-
-
-
-
-        progressDialog.setMessage("Registering Please Wait...");
+        progressDialog.setMessage("Signing in Please Wait...");
         progressDialog.show();
 
 
@@ -105,4 +107,42 @@ public class Login extends AppCompatActivity {
 
     }
 
+    // validating email
+    private boolean isValidEmail(String email) {
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    // validating password
+    private boolean isValidPassword(String pass) {
+        if (pass != null && pass.length() > 6) {
+            return true;
+        }
+        return false;
+    }
+
+    int a =1;
+
+    private boolean checkEmailAvailability(String email){
+        firebaseAuth.fetchProvidersForEmail(email).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
+            @Override
+            public void onComplete(@NonNull Task<ProviderQueryResult> task) {
+                if(task.isSuccessful()){
+                    ///////// getProviders() will return size 1. if email ID is available.
+                    if(task.getResult().getProviders().toString().length()!=1)a=0;
+                }
+            }
+        });
+
+        if(a==0)return false;
+        else return true;
+    }
+
+
 }
+
+
