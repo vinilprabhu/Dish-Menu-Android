@@ -10,12 +10,12 @@
     tools:context="com.vinil.dishmenu.MainActivity">
 
 
-    <com.google.android.gms.common.SignInButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gsb"
-        android:layout_below="@+id/buttonSignin"
-        android:layout_centerHorizontal="true" />
+    <!--<com.google.android.gms.common.SignInButton-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/gsb"-->
+        <!--android:layout_below="@+id/buttonSignin"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
 
     <TextView

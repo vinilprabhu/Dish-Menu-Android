@@ -14,8 +14,8 @@ public class Home extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
 
-    private TextView tvEmail;
-    private Button bLogout;
+    private TextView tvEmail,tvUID,tvName;
+    private Button bLogout,buttonup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +29,44 @@ public class Home extends AppCompatActivity {
             finish();
 
             startActivity(new Intent(this, Login.class));
+        }else{
+            FirebaseUser user=firebaseAuth.getCurrentUser();
+
+            tvEmail=(TextView)findViewById(R.id.textViewEmail);
+            tvUID=(TextView)findViewById(R.id.textViewUID);
+            tvName=(TextView)findViewById(R.id.textViewName);
+            bLogout=(Button)findViewById(R.id.buttonLogout);
+            buttonup=(Button)findViewById(R.id.buttonup);
+
+            tvEmail.setText(user.getEmail());
+            String Uid=user.getUid();
+            tvUID.setText(Uid);
+            String name = user.getDisplayName();
+            tvName.setText(name);
+
+            bLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    firebaseAuth.signOut();
+
+                    finish();
+
+                    startActivity(new Intent(getApplicationContext(), Login.class));
+                }
+            });
+
+            buttonup.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                    startActivity(new Intent(getApplicationContext(), UserDetails.class));
+                }
+            });
         }
 
-        FirebaseUser user=firebaseAuth.getCurrentUser();
 
-        tvEmail=(TextView)findViewById(R.id.textViewEmail);
-        bLogout=(Button)findViewById(R.id.buttonLogout);
-
-        tvEmail.setText(user.getEmail());
-
-        bLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                firebaseAuth.signOut();
-
-                finish();
-
-                startActivity(new Intent(getApplicationContext(), Login.class));
-            }
-        });
 
 
 
