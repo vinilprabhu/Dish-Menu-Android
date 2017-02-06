@@ -180,6 +180,10 @@
         "source": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
+        "merged": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/merged/debug/layout/activity_restaurant.xml",
+        "source": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/src/main/res/layout/activity_restaurant.xml"
+    },
+    {
         "merged": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
         "source": "/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media.xml"
     },

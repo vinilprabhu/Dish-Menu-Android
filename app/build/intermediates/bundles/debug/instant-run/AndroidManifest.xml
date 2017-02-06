@@ -22,7 +22,7 @@
     <application
         android:name="com.android.tools.fd.runtime.BootstrapApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
@@ -36,6 +36,7 @@
         <activity android:name="com.vinil.dishmenu.MainActivity" />
         <activity android:name="com.vinil.dishmenu.Login" />
         <activity android:name="com.vinil.dishmenu.UserDetails" />
+        <activity android:name="com.vinil.dishmenu.Restaurant" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

@@ -5,87 +5,95 @@
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="#23dcf1"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.vinil.dishmenu.UserDetails">
 
 
-    <EditText
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="First Name"
-        android:ems="10"
-        android:id="@+id/editTextFirstName"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Surname"
-        android:ems="10"
-        android:id="@+id/editTextSurname"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editTextFirstName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignEnd="@+id/editTextFirstName" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:ems="10"
-        android:hint="Country"
-        android:id="@+id/editTextCountry"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editTextSurname"
-        android:layout_alignParentLeft="true"
-        android:layout_alignEnd="@+id/editTextSurname" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:hint="Date of Birth"
-        android:id="@+id/editTextDOB"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editTextCountry"
-        android:layout_alignParentLeft="true"
-        android:layout_alignEnd="@+id/editTextCountry" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:hint="Phone no"
-        android:id="@+id/editTextPhone"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editTextDOB"
-        android:layout_alignParentLeft="true"
-        android:layout_alignEnd="@+id/editTextDOB" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/buttonsubmitDetails"
-        android:layout_below="@+id/editTextPhone"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Update Profile"
-        android:textSize="30dp"
+        android:id="@+id/scrollView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+        android:layout_alignParentStart="true">
+
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Update Profile"
+            android:textSize="30dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="First Name"
+            android:ems="10"
+            android:textColorHint="#a1dc230e"
+            android:id="@+id/editTextFirstName"
+            android:layout_marginTop="43dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textColorHint="#a1dc230e"
+            android:hint="Surname"
+            android:ems="10"
+            android:id="@+id/editTextSurname" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:textColorHint="#a1dc230e"
+            android:ems="10"
+            android:hint="Country"
+            android:id="@+id/editTextCountry" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:textColorHint="#a1dc230e"
+            android:ems="10"
+            android:hint="Date of Birth"
+            android:id="@+id/editTextDOB" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textColorHint="#a1dc230e"
+            android:ems="10"
+            android:hint="Phone no"
+            android:id="@+id/editTextPhone"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textColor="#23dcf1"
+            android:background="#88000000"
+            android:id="@+id/buttonsubmitDetails"
+            android:layout_gravity="center_horizontal" />
+
+    </LinearLayout>
 
 </RelativeLayout>

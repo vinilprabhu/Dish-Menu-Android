@@ -132,6 +132,7 @@
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="play-services-base-9.8.0" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-database-9.8.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-analytics-impl-9.8.0" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-25.0.0" level="project" />
@@ -144,6 +145,9 @@
     <orderEntry type="library" exported="" name="support-annotations-25.0.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-auth-9.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-auth-base-9.8.0" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.7" level="project" />
+    <orderEntry type="library" exported="" name="retrofit-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="converter-gson-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-auth-common-9.8.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-9.8.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.0.0" level="project" />
@@ -155,6 +159,7 @@
     <orderEntry type="library" exported="" name="play-services-auth-9.8.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" exported="" name="firebase-analytics-9.8.0" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.3.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-25.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-25.0.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
