@@ -24,6 +24,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.ProviderQueryResult;
 
@@ -111,19 +114,16 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
 
-                String errorMsg = "Invalid Email",errorMsg2="Invalid Password";
 
                 final String email = editTextEmail.getText().toString();
-                final String pass = editTextPassword.getText().toString();
 
-                //validation
-                if (!isValidEmail(email))editTextEmail.setError(errorMsg);
 
-                else if(checkEmailAvailability(email))editTextEmail.setError("Email ID is already used!\nSignIn now");
 
-                else if (!isValidPassword(pass))editTextPassword.setError(errorMsg2);
 
+                if(email.length()==0)
+                    editTextEmail.setError("Email ID cannot be empty");
                 else registerUser();
+
             }
         });
 
@@ -145,59 +145,14 @@ public class MainActivity extends AppCompatActivity{
         firebaseAuth.addAuthStateListener(firebaseAuthListener);
     }
 
-//    private void signIn() {
-//        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-//        startActivityForResult(signInIntent, RC_SIGN_IN);
-//    }
-
-
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-//        if (requestCode == RC_SIGN_IN) {
-//            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-//            if (result.isSuccess()) {
-//                // Google Sign In was successful, authenticate with Firebase
-//                GoogleSignInAccount account = result.getSignInAccount();
-//                firebaseAuthWithGoogle(account);
-//            } else {
-//                // Google Sign In failed, update UI appropriately
-//                // ...
-//            }
-//        }
-//    }
-
-//    private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
-//        Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
-//
-//        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-//        firebaseAuth.signInWithCredential(credential)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
-//
-//                        // If sign in fails, display a message to the user. If sign in succeeds
-//                        // the auth state listener will be notified and logic to handle the
-//                        // signed in user can be handled in the listener.
-//                        if (!task.isSuccessful()) {
-//                            Log.w(TAG, "signInWithCredential", task.getException());
-//                            Toast.makeText(MainActivity.this, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
-//                        }
-//                        // ...
-//                    }
-//                });
-//
-//    }
-
 
     private void registerUser() {
 
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+
+        if(password.length()==0)
+            password="a";
 
 
         progressDialog.setMessage("Registering Please Wait...");
@@ -213,6 +168,16 @@ public class MainActivity extends AppCompatActivity{
                             startActivity(new Intent(getApplicationContext(), UserDetails.class));
                         } else {
                             Toast.makeText(MainActivity.this, "Registration Error", Toast.LENGTH_LONG).show();
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                // thrown if there already exists an account with the given email address
+                                editTextEmail.setError("Email ID is already used!\nSignIn now");
+                            } else if (task.getException() instanceof FirebaseAuthWeakPasswordException) {
+                                // thrown if the password is not strong enough
+                                editTextPassword.setError("password is not strong enough!");
+                            } else if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                // thrown if the email address is malformed
+                                editTextEmail.setError("Email ID is invalid!");
+                            }
                         }
                         progressDialog.dismiss();
                     }
@@ -220,38 +185,4 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
-    // validating email
-    private boolean isValidEmail(String email) {
-        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
-        Matcher matcher = pattern.matcher(email);
-        return matcher.matches();
-    }
-
-    // validating password
-    private boolean isValidPassword(String pass) {
-        if (pass != null && pass.length() > 6) {
-            return true;
-        }
-        return false;
-    }
-
-    int a =1;
-
-    private boolean checkEmailAvailability(String email){
-        firebaseAuth.fetchProvidersForEmail(email).addOnCompleteListener(new OnCompleteListener<ProviderQueryResult>() {
-            @Override
-            public void onComplete(@NonNull Task<ProviderQueryResult> task) {
-                if(task.isSuccessful()){
-                    ///////// getProviders() will return size 1. if email ID is available.
-                    if(task.getResult().getProviders().toString().length()!=1)a=0;
-                }
-            }
-        });
-
-        if(a==0)return false;
-        else return true;
-    }
 }

@@ -20,7 +20,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Login" />
         <activity android:name=".UserDetails" />
-        <activity android:name=".Restaurant"></activity>
+        <activity android:name=".Restaurant" />
+        <activity android:name=".GitHubRepoAdapter"></activity>
     </application>
 
 </manifest>

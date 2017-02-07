@@ -23,7 +23,7 @@ public class Home extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     private TextView tvEmail,tvFirstName,tvSurname,tvCountry,tvDOB,tvPhone;
-    private Button bLogout,buttonup;
+    private Button bLogout,buttonup,buttonrest;
 
     private static final String TAG="Home";
     private String mUserId;
@@ -55,6 +55,7 @@ public class Home extends AppCompatActivity {
             tvPhone=(TextView)findViewById(R.id.textViewPhone);
             bLogout=(Button)findViewById(R.id.buttonLogout);
             buttonup=(Button)findViewById(R.id.buttonup);
+            buttonrest=(Button)findViewById(R.id.buttonrest);
 
             tvEmail.setText(user.getEmail());
 
@@ -138,6 +139,14 @@ public class Home extends AppCompatActivity {
 
 
                     startActivity(new Intent(getApplicationContext(), UserDetails.class));
+                }
+            });
+
+            buttonrest.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    startActivity(new Intent(getApplicationContext(), Restaurant.class));
                 }
             });
         }

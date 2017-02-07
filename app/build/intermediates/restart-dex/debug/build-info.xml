@@ -4,26 +4,57 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="24507874462111"
-    token="8989277994569243366" >
+    timestamp="8154886042211"
+    token="8989277994569243366"
+    verifier="R_CLASS_CHANGE" >
 
     <task
         name="javac"
-        duration="7817" />
+        duration="990" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="545" />
+        duration="131" />
     <task
         name="verifier"
-        duration="186" />
+        duration="24" />
 
     <artifact
-        location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/resources-debug.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+        type="DEX" />
+    <artifact
+        location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+        type="DEX" />
 
+    <build timestamp="8088347913283" >
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="8154886042211"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
+            type="DEX" />
+    </build>
     <build timestamp="24507874462111" >
         <artifact
             location="/home/vinil/AndroidStudioProjects/project/DishMenu/app/build/outputs/apk/app-debug.apk"

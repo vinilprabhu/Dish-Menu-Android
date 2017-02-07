@@ -16,6 +16,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.ProviderQueryResult;
 
 import java.util.regex.Matcher;
@@ -61,13 +65,18 @@ public class Login extends AppCompatActivity {
                 final String email = editTextEmail.getText().toString();
                 final String pass = editTextPassword.getText().toString();
 
-                //validation
-                if (!isValidEmail(email))editTextEmail.setError(errorMsg);
+//                //validation
+//                if (!isValidEmail(email))editTextEmail.setError(errorMsg);
+//
+//                else if(!checkEmailAvailability(email))editTextEmail.setError("Email not registered!\nSignUp now");
+//
+//                else if (!isValidPassword(pass))editTextPassword.setError(errorMsg2);
+//
+//                else userLogin();
 
-                else if(!checkEmailAvailability(email))editTextEmail.setError("Email not registered!\nSignUp now");
 
-                else if (!isValidPassword(pass))editTextPassword.setError(errorMsg2);
-
+                if(email.length()==0)
+                    editTextEmail.setError("Email ID cannot be empty");
                 else userLogin();
             }
         });
@@ -85,6 +94,8 @@ public class Login extends AppCompatActivity {
         String email = editTextEmail.getText().toString().trim();
         String password  = editTextPassword.getText().toString().trim();
 
+        if(password.length()==0)
+            password="a";
 
         progressDialog.setMessage("Signing in Please Wait...");
         progressDialog.show();
@@ -101,6 +112,18 @@ public class Login extends AppCompatActivity {
                     finish();
 
                     startActivity(new Intent(getApplicationContext(), Home.class));
+                }else {
+                    Toast.makeText(Login.this, "Registration Error", Toast.LENGTH_LONG).show();
+                    if (task.getException() instanceof FirebaseAuthInvalidUserException) {
+                        // thrown if there already exists an account with the given email address
+                        editTextEmail.setError("Email ID not registered!\nSignUP now");
+                    } else if (task.getException() instanceof FirebaseAuthWeakPasswordException) {
+                        // thrown if the password is not strong enough
+                        editTextPassword.setError("password is not strong enough!");
+                    } else if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                        // thrown if the email address is malformed
+                        editTextPassword.setError("password incorrect!");
+                    }
                 }
             }
         });
